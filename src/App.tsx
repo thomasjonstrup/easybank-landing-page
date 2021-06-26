@@ -4,6 +4,11 @@ import Header from './components/Header'
 import Nav from './components/Nav'
 
 import ImageMockups from "url:./images/image-mockups.png";
+import ImageCard1 from "url:./images/image-currency.jpg";
+import ImageCard2 from "url:./images/image-restaurant.jpg";
+import ImageCard3 from "url:./images/image-plane.jpg";
+import ImageCard4 from "url:./images/image-confetti.jpg";
+
 import FeatureBox from './components/FeatureBox';
 
 export default function App() {
@@ -23,7 +28,7 @@ export default function App() {
 							account will be a one-stop-shop for spending,
 							saving, budgeting, investing, and much more
 						</p>
-						<button className="btn btn--primary">
+						<button className="btn btn--primary btn--hero">
 							Request Invite
 						</button>
 					</div>
@@ -43,10 +48,93 @@ export default function App() {
 						</p>
 					</div>
 					<div className="info__features">
-						<FeatureBox/>
-						<FeatureBox/>
-						<FeatureBox/>
-						<FeatureBox/>
+						<FeatureBox />
+						<FeatureBox />
+						<FeatureBox />
+						<FeatureBox />
+					</div>
+				</div>
+			</section>
+			<section className="articles">
+				<div className="container">
+					<h2>Latest Articles</h2>
+					<div className="cards">
+						<div className="card">
+							<div className="card__image">
+								<img src={ImageCard1} alt="image-currency" />
+							</div>
+							<div className="card__body">
+								<p className="card__author">
+									By Claire Robinson
+								</p>
+								<h3 className="card__title">
+									Receive money in any currency with no fees
+								</h3>
+								<p className="card__copy">
+									Receive money in any currency with no fees
+									The world is getting smaller and we’re
+									becoming more mobile. So why should you be
+									forced to only receive money in a single …
+								</p>
+							</div>
+						</div>
+						<div className="card">
+							<div className="card__image">
+								<img src={ImageCard2} alt="image-currency" />
+							</div>
+							<div className="card__body">
+								<p className="card__author">
+									By Claire Robinson
+								</p>
+								<h3 className="card__title">
+									Receive money in any currency with no fees
+								</h3>
+								<p className="card__copy">
+									Receive money in any currency with no fees
+									The world is getting smaller and we’re
+									becoming more mobile. So why should you be
+									forced to only receive money in a single …
+								</p>
+							</div>
+						</div>
+						<div className="card">
+							<div className="card__image">
+								<img src={ImageCard3} alt="image-currency" />
+							</div>
+							<div className="card__body">
+								<p className="card__author">
+									By Claire Robinson
+								</p>
+								<h3 className="card__title">
+									Receive money in any currency with no fees
+								</h3>
+								<p className="card__copy">
+									Receive money in any currency with no fees
+									The world is getting smaller and we’re
+									becoming more mobile. So why should you be
+									forced to only receive money in a single …
+								</p>
+							</div>
+						</div>
+						<div className="card">
+							<div className="card__image">
+								<img src={ImageCard4} alt="image-currency" />
+							</div>
+							<div className="card__body">
+								<p className="card__author">
+									By Claire Robinson
+								</p>
+								<h3 className="card__title">
+									Receive money in any currency with no fees
+								</h3>
+								<p className="card__copy">
+									Receive money in any currency with no fees
+									The world is getting smaller and we’re
+									becoming more mobile. So why should you be
+									forced to only receive money in a single …
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

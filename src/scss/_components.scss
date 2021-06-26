@@ -4,7 +4,7 @@
 	display: inline-flex;
 	justify-content: center;
 	border-radius: 2rem;
-	padding: 0.75rem 1rem;
+	padding: 1.2rem 2.5rem;
 	outline: none;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 	transition: all 0.23s ease-in-out;
@@ -12,46 +12,126 @@
 	min-width: 14rem;
 	border: none;
 	cursor: pointer;
+	font-size: 1.6rem;
 
-	@include modifier('outline') {
+	@include modifier("outline") {
 		background-color: transparent;
 		border: 1px solid #fff;
 	}
 
 	// Buttons sizes
-	@include modifier('small') {
+	@include modifier("small") {
 		font-size: 1rem;
 	}
-	@include modifier('large') {
+	@include modifier("large") {
 		font-size: 1.6rem;
 	}
 
-	@include modifier('bordered-primary') {
+	@include modifier("bordered-primary") {
 		background: #fff;
 		border: 1px solid #496ee8;
 		color: #496ee8;
 	}
 
-	@include modifier('primary') {
+	@include modifier("primary") {
 		background: linear-gradient(to right, $lime-green, $bright-cyan);
 		color: $white;
+	}
+
+	&:hover {
+		opacity: .7;
+		cursor: pointer;
+		transform: scale(.9);
 	}
 }
 
 .footer {
 	background-color: $dark-blue;
 	padding: 2.5rem;
+	color: $white;
 	text-align: center;
+
+	&__sections {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+			gap: 6rem;
+		}
+	}
+
+	&__section {
+		@include breakpoint-up(medium) {
+			flex-grow: 1;
+			width: 33%;
+		}
+
+		&--first {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+
+
+	a {
+		color: $white;
+	}
+
 	&__logo {
 		width: 20rem;
 	}
 
+	&__links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem 5rem;
+		transition: gap 0.4s ease-in;
+		flex-direction: column;
+		align-items: center;
 
-	.attribution { font-size: 1.1rem; text-align: center; }
-	.attribution a { color: $white }
 
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+			max-width: 40rem;
+		}
+
+	}
+
+	&__link {
+		font-size: 1.4rem;
+		width: 30%;
+		&:hover {
+			color: $lime-green;
+		}
+	}
+
+	.attribution {
+		font-size: 1.1rem;
+		text-align: center;
+		margin-top: 2rem;
+	}
+	.attribution a {
+		color: $white;
+		&:hover {
+			color: $lime-green;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__social-link {
+		color: $white;
+		&:hover {
+			color: $lime-green;
+		}
+	}
 }
-
 
 /* .header {
 	background-size: cover;
@@ -83,6 +163,7 @@
 	top: 0;
 	nav {
 		padding: 1.2rem;
+		position: relative;
 	}
 
 	&__logo {
@@ -93,15 +174,21 @@
 
 	&__close {
 		display: block;
-		background: url('../images/icon-close.svg');
+		background: url("../images/icon-close.svg");
 		width: 1.8rem;
 		height: 1.9rem;
 	}
 	&__menu {
 		display: block;
-		background: url('../images/icon-hamburger.svg');
+		background: url("../images/icon-hamburger.svg") no-repeat;
 		width: 2.4rem;
 		height: 1.1rem;
+
+		&--active {
+			background: url("../images/icon-close.svg") no-repeat;
+			width: 2rem;
+			height: 2rem;
+		}
 	}
 
 	&__menu {
@@ -120,34 +207,58 @@
 
 	&__link {
 		text-decoration: none;
-	/* 	color: $grayishBlue; */
+		/* 	color: $grayishBlue; */
 		&:visited {
 			text-decoration: none;
-		/* 	color: $grayishBlue; */
+			/* 	color: $grayishBlue; */
 		}
 		&:hover {
 			text-decoration: none;
-		/* 	color: $grayishBlue; */
+			/* 	color: $grayishBlue; */
 		}
 	}
 	&__links {
-		a {
-		/* 	font-size: $font-sm; */
+		@include breakpoint-down(medium) {
+			position: absolute;
+			width: 100%;
+			border-radius: 0.6rem;
+			top: 8rem;
+			right: 0;
+			opacity: 0;
+			flex-direction: column;
+			padding: 2.5rem;
+			display: none;
+			align-items: center;
+			grid-gap: 3rem;
+			gap: 3rem;
+			transition: all 0.4s ease-in;
+			background: $white;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
 
-			&:not(:last-child) {
-				margin-right: 32px;
+		&--open {
+			opacity: 1;
+			display: flex !important;
+		}
+
+		@include breakpoint-up(medium) {
+			a {
+				&:not(:last-child) {
+					margin-right: 3.2rem;
+				}
 			}
 		}
 	}
 }
-
 
 // Checkboxes
 .checkbox {
 	position: relative;
 	display: inline-block;
 
-	@include element('input') {
+	@include element("input") {
 		position: absolute;
 		opacity: 0;
 		z-index: -1;
@@ -158,7 +269,7 @@
 		}
 	}
 
-	@include element('label') {
+	@include element("label") {
 		display: flex;
 		align-items: center;
 		width: 5rem;
@@ -171,7 +282,7 @@
 		transition: all 0.4s ease;
 	}
 
-	@include element('marker') {
+	@include element("marker") {
 		display: block;
 		width: 2.6rem;
 		height: 2.6rem;
@@ -195,9 +306,9 @@ p {
 // Feature-box
 .feature-box {
 	display: flex;
-    flex-direction: column;
-    grid-gap: 2rem;
-    gap: 2rem;
+	flex-direction: column;
+	grid-gap: 2rem;
+	gap: 2rem;
 }
 
 .icon {
@@ -206,159 +317,33 @@ p {
 	align-self: flex-start;
 
 	&--online {
-		background: url('../images/icon-online.svg');
+		background: url("../images/icon-online.svg");
 	}
 }
 
 // Card
 
+.cards {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5rem;
+	grid-gap: 3rem;
+	gap: 3rem;
+}
+
 .card {
-	border-radius: 1em;
+	border-radius: 1rem;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	position: relative;
-	background-color: white;
-	box-shadow: 0 10px 40px -20px rgba(46, 78, 150, 0.4);
-	margin: -7rem 1rem 1rem 1rem;
 	position: relative;
-
-	@include breakpoint-up(medium) {
-		margin-top: -9rem;
-	}
-
-	img {
-		width: 16px;
-	}
-
-	@media (min-width: 768px) {
-		&__second {
-			margin-top: 5rem;
-		}
-		&__third {
-			margin-top: 10rem;
-		}
-	}
-
-	&__content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-
-		@include breakpoint-up(medium) {
-			justify-content: flex-end;
-			margin-top: 2rem;
-		}
-	}
-
-	&__list {
-		margin-bottom: 3rem;
-		list-style-position: inside;
-
-		@include breakpoint-up(medium) {
-			margin-bottom: 0rem;
-		}
-	}
-
-	&__billing {
-		margin: 0 0.6rem 0 0;
-	}
-
-	&__view {
-		font-size: 1.2rem;
-		margin-bottom: 2rem;
-
-		@include breakpoint-up(medium) {
-			align-self: flex-start;
-		}
-	}
-
-	&__price {
-		font-weight: 800;
-		font-size: 3rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 3rem;
-
-		@include breakpoint-up(medium) {
-			position: absolute;
-			top: 0;
-			right: 3rem;
-			margin-top: 4rem;
-		}
-	}
-
-	&__duration {
-		font-weight: 400;
-		font-size: 1rem;
-		padding-left: 1rem;
-		color: $grayish-blue;
-	}
-
-	&__discount {
-		background-color: $light-grayish-red;
-		color: $light-red;
-		padding: 0.1rem 0.6rem;
-		border-radius: 1rem;
-		font-size: 0.8rem;
-
-		span {
-			display: none;
-		}
-
-		@include breakpoint-up(medium) {
-			margin-right: 2rem;
-			span {
-				display: inline;
-			}
-		}
-	}
-
-	&__item {
-		margin-bottom: 1rem;
-		color: $grayish-blue;
-		font-size: 1rem;
-	}
-
-	&__title {
-		margin-bottom: 0.5rem;
-		margin-top: 1.5rem;
-	}
+	width: 25%;
 
 	&__image {
-		img {
-			width: 60%;
-		}
-	}
-
-	&__header {
-		padding: 4rem 2rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-
-		@include breakpoint-up(medium) {
-			padding: 3rem 3rem;
-		}
-	}
-
-	&__footer {
-		padding: 3rem 4.6rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-		border-top: 1px solid $light-grayish-blue1;
-
-		@include breakpoint-up(medium) {
-			flex-direction: row;
-			justify-content: space-between;
-			text-align: left;
-		}
+		border-radius: 0.4rem 0.4rem 0 0;
+		overflow: hidden;
+		height: 16.1rem;
 	}
 }
 
@@ -384,7 +369,7 @@ p {
 	}
 
 	&:after {
-		content: '';
+		content: "";
 		width: 1.5rem;
 		height: 1.5rem;
 		border-radius: 2rem;
@@ -398,12 +383,12 @@ p {
 }
 
 // Range input
-input[type='range'] {
+input[type="range"] {
 	-webkit-appearance: none;
 	margin: 10px 0;
 	width: 100%;
 }
-input[type='range']:focus {
+input[type="range"]:focus {
 	outline: none;
 }
 
