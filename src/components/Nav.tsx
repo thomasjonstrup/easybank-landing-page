@@ -52,19 +52,19 @@ export default function Nav() {
 				}}
 			></div>
 			<div className={"header__links" + opened}>
-				<a className="header__link" href="#">
+				<a className="header__link" href="#home">
 					Home
 				</a>
-				<a className="header__link" href="#">
+				<a className="header__link" href="#about">
 					About
 				</a>
-				<a className="header__link" href="#">
+				<a className="header__link" href="#contact">
 					Contact
 				</a>
-				<a className="header__link" href="#">
+				<a className="header__link" href="#blog">
 					Blog
 				</a>
-				<a className="header__link" href="#">
+				<a className="header__link" href="#careers">
 					Careers
 				</a>
 			</div>
