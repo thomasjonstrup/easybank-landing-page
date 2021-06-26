@@ -1,13 +1,18 @@
 import React from 'react'
 
-const FeatureBox = () => {
+type FeatureBoxProps = {
+  name: string,
+  paragraph: string,
+  icon: string
+}
+
+const FeatureBox = ({name, paragraph, icon}: FeatureBoxProps) => {
 	return (
 		<div className="feature-box">
-			<div className="icon icon--online"></div>
-			<h4 className="feature-box--name">Online Banking</h4>
+			<div className={`icon icon--${icon}`}></div>
+			<h4 className="feature-box--name">{name}</h4>
 			<p className="feature-box--content medium">
-				Our modern web and mobile applications to keep track of your
-				finances wherever you are in the world.
+				{paragraph}
 			</p>
 		</div>
 	);

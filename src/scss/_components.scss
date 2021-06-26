@@ -307,17 +307,36 @@ p {
 .feature-box {
 	display: flex;
 	flex-direction: column;
-	grid-gap: 2rem;
-	gap: 2rem;
+
+	&--content {
+		font-size: 1.6rem;
+	}
+
+	&--name {
+		padding-top: 1rem;
+	}
 }
 
 .icon {
 	height: 7.2rem;
 	width: 7.2rem;
-	align-self: flex-start;
+	align-self: center;
+
+	@include breakpoint-up(medium) {
+		align-self: flex-start;
+	}
 
 	&--online {
 		background: url("../images/icon-online.svg");
+	}
+	&--budgeting {
+		background: url("../images/icon-budgeting.svg");
+	}
+	&--onboarding {
+		background: url("../images/icon-onboarding.svg");
+	}
+	&--api {
+		background: url("../images/icon-api.svg");
 	}
 }
 
@@ -329,6 +348,11 @@ p {
 	margin-top: 5rem;
 	grid-gap: 3rem;
 	gap: 3rem;
+	flex-direction: column;
+
+	@include breakpoint-up(medium) {
+		flex-direction: row;
+	}
 }
 
 .card {
@@ -337,8 +361,10 @@ p {
 	justify-content: center;
 	flex-direction: column;
 	position: relative;
-	position: relative;
-	width: 25%;
+
+	@include breakpoint-up(medium) {
+		width: 25%;
+	}
 
 	&__image {
 		border-radius: 0.4rem 0.4rem 0 0;
