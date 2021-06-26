@@ -87,10 +87,9 @@ export default function App() {
 									Receive money in any currency with no fees
 								</h3>
 								<p className="card__copy">
-									Receive money in any currency with no fees
 									The world is getting smaller and we’re
 									becoming more mobile. So why should you be
-									forced to only receive money in a single …
+									forced to only receive money in a single…
 								</p>
 							</div>
 						</div>
@@ -99,17 +98,14 @@ export default function App() {
 								<img src={ImageCard2} alt="image-currency" />
 							</div>
 							<div className="card__body">
-								<p className="card__author">
-									By Claire Robinson
-								</p>
+								<p className="card__author">By Wilson Hutton</p>
 								<h3 className="card__title">
-									Receive money in any currency with no fees
+									Treat yourself without worrying about money
 								</h3>
 								<p className="card__copy">
-									Receive money in any currency with no fees
-									The world is getting smaller and we’re
-									becoming more mobile. So why should you be
-									forced to only receive money in a single …
+									Our simple budgeting feature allows you to
+									separate out your spending and set realistic
+									limits each month. That means you…
 								</p>
 							</div>
 						</div>
@@ -118,17 +114,14 @@ export default function App() {
 								<img src={ImageCard3} alt="image-currency" />
 							</div>
 							<div className="card__body">
-								<p className="card__author">
-									By Claire Robinson
-								</p>
+								<p className="card__author">By Wilson Hutton</p>
 								<h3 className="card__title">
-									Receive money in any currency with no fees
+									Take your Easybank card wherever you go
 								</h3>
 								<p className="card__copy">
-									Receive money in any currency with no fees
-									The world is getting smaller and we’re
-									becoming more mobile. So why should you be
-									forced to only receive money in a single …
+									We want you to enjoy your travels. This is
+									why we don’t charge any fees on purchases
+									while you’re abroad. We’ll even show you…
 								</p>
 							</div>
 						</div>
@@ -141,13 +134,13 @@ export default function App() {
 									By Claire Robinson
 								</p>
 								<h3 className="card__title">
-									Receive money in any currency with no fees
+									Our invite-only Beta accounts are now live!
 								</h3>
 								<p className="card__copy">
-									Receive money in any currency with no fees
-									The world is getting smaller and we’re
-									becoming more mobile. So why should you be
-									forced to only receive money in a single …
+									After a lot of hard work by the whole team,
+									we’re excited to launch our closed beta.
+									It’s easy to request an invite through the
+									site...
 								</p>
 							</div>
 						</div>
